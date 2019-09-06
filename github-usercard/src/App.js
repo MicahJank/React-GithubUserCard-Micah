@@ -2,6 +2,9 @@ import React from 'react';
 
 import axios from 'axios';
 
+import TopBar from './components/TopBar.js';
+import UserCard from './components/UserCard.js';
+
 class App extends React.Component {
   // since we dont need to use props we dont need a constructor or super and can set initial state this way
   state = {
@@ -25,7 +28,10 @@ class App extends React.Component {
   render() {
     console.log(this.state)
     return (
-      <div>Hello</div>
+      <div>
+        <TopBar />
+        <UserCard user={this.state.user} />
+      </div>
     );
   }
 }
