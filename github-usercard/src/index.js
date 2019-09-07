@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import './global.css';
 import "shards-ui/dist/css/shards.min.css"
 
 ReactDOM.render(<App />, document.getElementById('root'));
