@@ -4,6 +4,14 @@ import axios from 'axios';
 
 import TopBar from './components/TopBar.js';
 import UserCard from './components/UserCard.js';
+import FollowersBar from './components/FollowersBar.js';
+
+import styled from 'styled-components';
+import { Divider, Box } from '@material-ui/core';
+
+const FollowersSection = styled.section`
+  margin-top: 50px;
+`;
 
 class App extends React.Component {
   // since we dont need to use props we dont need a constructor or super and can set initial state this way
@@ -28,10 +36,14 @@ class App extends React.Component {
   render() {
     console.log(this.state)
     return (
-      <div>
+      <Box>
         <TopBar />
         <UserCard user={this.state.user} />
-      </div>
+        <FollowersSection>
+          <Divider />
+          <FollowersBar />
+        </FollowersSection>
+      </Box>
     );
   }
 }
