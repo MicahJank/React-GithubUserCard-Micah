@@ -1,10 +1,15 @@
 import React from 'react';
 
+import { Box } from '@material-ui/core';
 
-const FollowersList = () => {
+import FollowerCard from './FollowerCard.js';
+
+const FollowersList = ( { followers } ) => {
 
     return (
-        <div>FollowersList</div>
+        <Box display='flex' flexDirection='row' flexWrap='wrap' justifyContent='space-around' alignContent='space-between' >
+            {followers.map(follower => <FollowerCard follower={follower} key={follower.id} />)}
+        </Box>
     );
 }
 

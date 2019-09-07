@@ -5,6 +5,7 @@ import axios from 'axios';
 import TopBar from './components/TopBar.js';
 import UserCard from './components/UserCard.js';
 import FollowersBar from './components/FollowersBar.js';
+import FollowersList from './components/FollowersList.js';
 
 import styled from 'styled-components';
 import { Divider, Box } from '@material-ui/core';
@@ -42,6 +43,7 @@ class App extends React.Component {
         <FollowersSection>
           <Divider />
           <FollowersBar />
+          <FollowersList followers={this.state.followers} />
         </FollowersSection>
       </Box>
     );
