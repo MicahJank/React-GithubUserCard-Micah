@@ -28,7 +28,7 @@ const UserCard = ( { user } ) => {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button size='small' color='primary'>Github &rarr;</Button>
+                    <Button size='small' color='primary'><a href={user.html_url}>Github &rarr;</a></Button>
                 </CardActions>          
             </Card>
         </Box>
