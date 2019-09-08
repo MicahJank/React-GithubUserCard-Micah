@@ -6,6 +6,7 @@ import TopBar from './components/TopBar.js';
 import UserCard from './components/UserCard.js';
 import FollowersBar from './components/FollowersBar.js';
 import FollowersList from './components/FollowersList.js';
+import SearchForm from './components/SearchForm.js';
 
 import styled from 'styled-components';
 import { Divider, Box } from '@material-ui/core';
@@ -68,6 +69,7 @@ class App extends React.Component {
     return (
       <Box>
         <TopBar />
+        <SearchForm />
         <UserCard user={this.state.user} />
         <FollowersSection>
           <Divider />
