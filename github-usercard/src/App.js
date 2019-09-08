@@ -20,7 +20,8 @@ class App extends React.Component {
   state = {
     userName: 'MicahJank', // the intial name to be used for the api call, can be change whenever a user clicks one of the follower cards
     user: [],
-    followers: []
+    followers: [],
+    searchInput: ''
   }
 
   // Here is where we are grabbing the data, after using axios to get the data from the api i set the state to the user data inside
@@ -65,11 +66,19 @@ class App extends React.Component {
     console.log('App.js: handleClick', this.state.userName);
   }
 
+  handleChange = (event) => {
+    console.log('App.js: handleChange')
+    this.setState({
+      searchInput: event.target.value
+    })
+  }
+
   render() {
+    console.log(this.state.searchInput);
     return (
       <Box>
         <TopBar />
-        <SearchForm />
+        <SearchForm searchInput={this.state.searchInput} handleChange={this.handleChange} />
         <UserCard user={this.state.user} />
         <FollowersSection>
           <Divider />

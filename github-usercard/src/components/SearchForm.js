@@ -15,13 +15,13 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const SearchForm = () => {
+const SearchForm = ( { handleChange, searchInput } ) => {
 
     const classes = useStyles();
 
     return (
         <Box className={classes.searchBox} display='flex' justifyContent='center'>
-            <TextField id='standard-search' label='Search field' type='search' margin='nomral' className={classes.textField} />
+            <TextField value={searchInput} onChange={handleChange} id='standard-search' label='Search a User' type='text' margin='normal' className={classes.textField} />
         </Box>
     )
 }
