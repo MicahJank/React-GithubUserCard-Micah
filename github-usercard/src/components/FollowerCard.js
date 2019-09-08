@@ -12,10 +12,10 @@ const useStyles = makeStyles({
     },
 });
 
-const FollowerCard = ( { follower } ) => {
+const FollowerCard = ( { follower, handleClick } ) => {
     const classes = useStyles();
     return (
-        <Card className={classes.card}>
+        <Card onClick={() => handleClick(follower)} className={classes.card}>
             <CardActionArea>
                 <CardMedia component='img' image={follower.avatar_url} alt='current follower profile' title='current follower profile' />
                 <CardContent>

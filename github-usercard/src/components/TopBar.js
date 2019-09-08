@@ -1,10 +1,13 @@
 import React from 'react';
 
+import { Box } from '@material-ui/core';
 
 const TopBar = () => {
 
     return (
-        <h1>Title</h1>
+        <Box display='flex' justifyContent='center'>
+            <h1>GitHub UserCards</h1>
+        </Box>
     );
 }
 
