@@ -2,9 +2,9 @@ import React from 'react';
 
 import GitChart from 'github-calendar';
 
-const GithubChart = () => {
+const GithubChart = ( { user } ) => {
 
-    GitChart('.calendar', 'MicahJank', {responsive: true});
+    GitChart('.calendar', user.login, {responsive: true});
 
     return (
         <div className='calendar'>

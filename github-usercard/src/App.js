@@ -78,11 +78,12 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('app.js: state user name', this.state.user)
     return (
       <Box>
         <TopBar />
         <SearchForm handleSubmit={this.handleSubmit} searchInput={this.state.searchInput} handleChange={this.handleChange} />
-        <GithubChart />
+        <GithubChart user={this.state.user} />
         <UserCard user={this.state.user} />
         <FollowersSection>
           <Divider />
