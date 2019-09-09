@@ -65,12 +65,13 @@ class App extends React.Component {
     })
   }
 
+  // gets passed down to the SearchForm component
   handleChange = (event) => {
     this.setState({
       searchInput: event.target.value
     })
   }
-
+  // gets passed down to the SearchForm component
   handleSubmit = event => {
     event.preventDefault();
     this.setState({
@@ -78,6 +79,8 @@ class App extends React.Component {
     })
   }
 
+  // toggles the boolean in the state, passed down to both the UserCard component as well as the GithubChart component since they both
+  // need the ability to toggle the state
   toggleContributions = () => {
     this.setState({
       contributionsOn: !this.state.contributionsOn
