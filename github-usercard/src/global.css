@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import 'https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css';
 
 * {
     box-sizing: border-box;

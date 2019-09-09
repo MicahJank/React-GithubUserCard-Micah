@@ -7,6 +7,7 @@ import UserCard from './components/UserCard.js';
 import FollowersBar from './components/FollowersBar.js';
 import FollowersList from './components/FollowersList.js';
 import SearchForm from './components/SearchForm.js';
+import GithubChart from './components/GithubChart.js';
 
 import styled from 'styled-components';
 import { Divider, Box } from '@material-ui/core';
@@ -81,6 +82,7 @@ class App extends React.Component {
       <Box>
         <TopBar />
         <SearchForm handleSubmit={this.handleSubmit} searchInput={this.state.searchInput} handleChange={this.handleChange} />
+        <GithubChart />
         <UserCard user={this.state.user} />
         <FollowersSection>
           <Divider />
