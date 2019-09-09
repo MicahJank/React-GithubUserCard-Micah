@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { makeStyles, MenuItem, TextField, Box } from '@material-ui/core';
+import { makeStyles, MenuItem, TextField, Box, Button } from '@material-ui/core';
+import { flexbox } from '@material-ui/system';
 
 
 const useStyles = makeStyles(theme => ({
@@ -12,6 +13,13 @@ const useStyles = makeStyles(theme => ({
     searchBox: {
         marginBottom: 30,
         marginTop: 10,
+    },
+    button: {
+        margin: theme.spacing(1),
+    },
+    form: {
+        display: flexbox,
+        flexDirection: "column",
     }
 }))
 
@@ -21,7 +29,10 @@ const SearchForm = ( { handleChange, searchInput } ) => {
 
     return (
         <Box className={classes.searchBox} display='flex' justifyContent='center'>
-            <TextField value={searchInput} onChange={handleChange} id='standard-search' label='Search a User' type='text' margin='normal' className={classes.textField} />
+            <form className={classes.form}>
+                <TextField value={searchInput} onChange={handleChange} id='standard-search' label='Search a User' type='search' margin='normal' className={classes.textField} />
+                <Button className={classes.button} variant='contained' color='primary'>Search</Button>
+            </form>
         </Box>
     )
 }

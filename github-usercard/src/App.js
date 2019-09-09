@@ -29,7 +29,6 @@ class App extends React.Component {
     axios.get(`https://api.github.com/users/${this.state.userName}`)
       .then(res => {
         this.setState({user: res.data})
-        console.log('App.js: componentDidMount: ',this.state.user)
         return res.data.followers_url; // return the followers url because when we chain another .then we will need to do another axios call with the followers url
       })
       .then(followersURL => {
@@ -54,7 +53,6 @@ class App extends React.Component {
         })
         .catch(err => alert(err));
     }
-    console.log('App.js: componentDidUpdate: ', this.state.userName)
   };
 
   // the handle click should be passed down to the FollowerCard so that whenever the user clicks on a card the main card that is displayed changes to that user instead
@@ -63,18 +61,15 @@ class App extends React.Component {
     this.setState({
       userName: follower.login
     })
-    console.log('App.js: handleClick', this.state.userName);
   }
 
   handleChange = (event) => {
-    console.log('App.js: handleChange')
     this.setState({
       searchInput: event.target.value
     })
   }
 
   render() {
-    console.log(this.state.searchInput);
     return (
       <Box>
         <TopBar />
