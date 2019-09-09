@@ -69,11 +69,18 @@ class App extends React.Component {
     })
   }
 
+  handleSubmit = event => {
+    event.preventDefault();
+    this.setState({
+      userName: (this.state.searchInput === '' ? 'MicahJank' : this.state.searchInput)
+    })
+  }
+
   render() {
     return (
       <Box>
         <TopBar />
-        <SearchForm searchInput={this.state.searchInput} handleChange={this.handleChange} />
+        <SearchForm handleSubmit={this.handleSubmit} searchInput={this.state.searchInput} handleChange={this.handleChange} />
         <UserCard user={this.state.user} />
         <FollowersSection>
           <Divider />
