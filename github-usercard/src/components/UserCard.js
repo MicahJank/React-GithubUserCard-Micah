@@ -3,19 +3,22 @@ import React from 'react';
 import { makeStyles, Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography, Box } from '@material-ui/core';
 
 const useStyles = makeStyles({
-    card: {
+    cardVisible: {
         maxWidth: 345,
+    },
+    cardHidden: {
+        display: 'none'
     },
     media: {
         height: 140,
     },
 });
 
-const UserCard = ( { user } ) => {
+const UserCard = ( { user, contributionsOn, toggleContributions } ) => {
     const classes = useStyles();
     return (
         <Box display='flex' flexDirection='column' justifyContent='center' alignItems='center'>
-            <Card className={classes.card}>
+            <Card onClick={toggleContributions} className={contributionsOn ? classes.cardHidden : classes.cardVisible}>
                 <CardActionArea>
                     <CardMedia component='img' image={user.avatar_url} alt='current user profile' title='current user profile' />
                     <CardContent>
