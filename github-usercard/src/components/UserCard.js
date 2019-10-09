@@ -26,7 +26,7 @@ const UserCard = ( { user, contributionsOn, toggleContributions } ) => {
                         <Typography variant='body2' color='textSecondary' component='p'>{user.bio}</Typography>
                     </CardContent>
                     <CardContent>
-                        <Typography variant='subtitle1' component='sub'>Followed by {user.followers} people</Typography>
+                        <Typography variant='subtitle1' component='sub'>asdfasdf by {user.followers} people</Typography>
                         <Typography variant='subtitle1' component='sub'>Following {user.following} people</Typography>
                     </CardContent>
                 </CardActionArea>
